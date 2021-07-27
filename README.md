@@ -1,4 +1,4 @@
-## Quick Push Notification Integration In Ionic + Capacitor (React)
+## Advanced Push Notification Integration In Ionic + Capacitor (React)
 
 ### Requirements:
 
@@ -11,8 +11,8 @@
 
 ### Repo:
 
-- [Quick setup](https://github.com/OneSignal/OneSignal-Angular)
-- [Advanced setup](https://github.com/OneSignal/OneSignal-Angular/tree/FINAL-CODE)
+- [Quick setup](https://github.com/OneSignalDevelopers/OneSignal-Ionic-Capacitor-React-Sample/tree/quick-setup)
+- [Advanced setup](https://github.com/OneSignalDevelopers/OneSignal-Ionic-Capacitor-React-Sample/tree/advanced-setup)
 
 Creating Your Ionic + Capacitor (React) App
 Inside your terminal, you will have to run the following command to add the Ionic project globally in your machine to use Ionic in your command line.
@@ -37,9 +37,11 @@ Later you will be asked to select a template, feel free to select the template t
 
 ![ionic tabs template](https://lh3.googleusercontent.com/6WJKyp8p393BnpXuKcq50Lf2DhKOl7Xrw6yUXyAl7qhE66xFzePN2Kw0YfsoP7lcxGOXVluwPtYiYlyUNbSEJP-8D0clLmgGtvhBAqRT5sYLdYRS1W_L6OmmIHQlkynQ9m-NHfaj)
 
-### Quick OneSignal Setup In Ionic Application
+### Advanced OneSignal Setup In Ionic Application
 
 In your Ionic project folder, navigate to the public folder and open the **index.html** file. Inside of the head HTML tag paste the following code.
+
+**Note: If you don’t see the service worker registered after doing these steps, refresh the Ionic app.**
 
 ```html
 <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
