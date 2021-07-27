@@ -1,0 +1,7 @@
+{
+  "name": "OneSignal-Ionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
