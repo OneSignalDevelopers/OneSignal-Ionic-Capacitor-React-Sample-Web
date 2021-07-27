@@ -53,6 +53,6 @@ In your Ionic project folder, navigate to the public folder and open the **index
 </script>
 ```
 
-Now, [download the SDK files](https://github.com/OneSignal/OneSignal-Website-SDK/releases/download/https-integration-files/OneSignal-Web-SDK-HTTPS-Integration-Files.zip) in your computer and insert them inside of the _public_ folder of your Ionic app.
+If you haven already, [download the SDK files](https://github.com/OneSignal/OneSignal-Website-SDK/releases/download/https-integration-files/OneSignal-Web-SDK-HTTPS-Integration-Files.zip) in your computer and insert them inside of the _public_ folder of your Ionic app.
 
 ![OneSignal SDK files](https://lh6.googleusercontent.com/k2BoFHAeerxCWiMuXotSISlVC_ztUaUj2_PDGwRpdsSTSkz3PB3fpE79wcWMWLusvRhihDnZvQVU-DbTcoIsPXB68UUcY1Vto3QasIAShwv2CXS66_3fY_kUNHH-BLrji3qMd90X)
