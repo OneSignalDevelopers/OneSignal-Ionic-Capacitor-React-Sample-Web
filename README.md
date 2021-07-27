@@ -39,20 +39,51 @@ Later you will be asked to select a template, feel free to select the template t
 
 ### Quick OneSignal Setup In Ionic Application
 
-In your Ionic project folder, navigate to the public folder and open the **index.html** file. Inside of the head HTML tag paste the following code (This is the same code you copied form the typic site setup steps).
+In your Ionic project folder, navigate to the public folder and open the **index.html** file. Inside of the head HTML tag paste the following code.
 
 ```html
 <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-<script>
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function () {
-    OneSignal.init({
-      appId: "YOUR-APP-ID",
-    });
-  });
-</script>
 ```
 
 If you haven already, [download the SDK files](https://github.com/OneSignal/OneSignal-Website-SDK/releases/download/https-integration-files/OneSignal-Web-SDK-HTTPS-Integration-Files.zip) in your computer and insert them inside of the _public_ folder of your Ionic app.
 
 ![OneSignal SDK files](https://lh6.googleusercontent.com/k2BoFHAeerxCWiMuXotSISlVC_ztUaUj2_PDGwRpdsSTSkz3PB3fpE79wcWMWLusvRhihDnZvQVU-DbTcoIsPXB68UUcY1Vto3QasIAShwv2CXS66_3fY_kUNHH-BLrji3qMd90X)
+
+Inside of your **App.tsx** file, before you declare the App component, define the Global interface for the OneSignal object to be part of your Window object.
+
+```javascript
+declare global {
+ interface Window {
+   OneSignal: any;
+ }
+}
+```
+
+Inside of your **App.tsx** file, you will enter the following lines of code inside of the App component you are declaring:
+
+```javascript
+window.OneSignal = window.OneSignal || [];
+const OneSignal = window.OneSignal;
+```
+
+Import `useEffect` hook at the top of your file
+
+```javascript
+import { useEffect } from "react";
+```
+
+The code above will make the `window` object aware of the `OneSignal` property. This will allow you to have access to the OneSignal SDK properties after the SDK has loaded into your web application.
+In the same file, we will create a `useEffect`. This hook will have the initialization code needed to trigger OneSignal. Remember to add the dependency array `[]` to your `useEffect` hook. The `init()` method from OneSignal can only be called once and the dependency array will help us to avoid that the useEffect gets triggered multiple times firing the `init()` method.
+
+```javascript
+useEffect(() => {
+  OneSignal.push(() => {
+    OneSignal.init({
+      appId: "YOUR-APP-ID",
+    });
+  });
+  return () => {
+    window.OneSignal = undefined;
+  };
+}, []);
+```
