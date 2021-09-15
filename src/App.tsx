@@ -32,14 +32,17 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+
 import { useEffect } from 'react';
 
+//OneSignal NPM Package
 import OneSignal from "react-onesignal";
 
 const App: React.FC = () => {
+
   useEffect(() => {
     OneSignal.init({
-      appId: "YOUR-APP-ID-HERE"
+      appId: "YOUR-APP-ID"
     });
   }, []);
 
