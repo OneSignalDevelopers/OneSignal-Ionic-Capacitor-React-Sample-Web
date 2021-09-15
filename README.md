@@ -1,4 +1,4 @@
-## Advanced Push Notification Integration In Ionic + Capacitor (React)
+## Push Notification Integration In Ionic + Capacitor Web App (React)
 
 ### Requirements:
 
